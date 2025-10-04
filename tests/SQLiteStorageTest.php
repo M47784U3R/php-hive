@@ -5,7 +5,7 @@ namespace Tests;
 use MinistryOfCode\Hive\Storage\SQLite;
 use PHPUnit\Framework\TestCase;
 
-class SQLiteStorageTests extends TestCase
+class SQLiteStorageTest extends TestCase
 {
     public function testInitFileStorage() {
         $sqliteStorage = new SQLite();

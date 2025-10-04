@@ -5,7 +5,7 @@ namespace Tests;
 use MinistryOfCode\Hive\Storage\File;
 use PHPUnit\Framework\TestCase;
 
-class FileStorageTests extends TestCase
+class FileStorageTest extends TestCase
 {
     public function testInitFileStorage() {
         $fileStorage = new File();
