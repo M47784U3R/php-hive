@@ -1,5 +1,4 @@
 version: 2
-security-updates: true
 updates:
   - package-ecosystem: "composer"
     directory: "/"
