@@ -1,4 +1,5 @@
 version: 2
+security-updates: true
 updates:
   - package-ecosystem: "composer"
     directory: "/"
@@ -7,7 +8,6 @@ updates:
       day: "monday"
       time: "03:00"
     open-pull-requests-limit: 10
-    security-updates: true
     labels:
       - "dependabot"
       - "composer"
