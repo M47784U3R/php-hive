@@ -25,10 +25,7 @@ class Hive
         $this->logger = new Logger(
             $this->config->getLogPath(),
             LogLevel::DEBUG,
-            [
-                'extension'      => 'log',
-                'dateFormat'     => 'Y-m-d H:i:s',
-            ]
+            $this->config->getLoggerSettings()
         );
         $this->log(LogLevel::INFO, 'Initializing Hive');
         $this->storage;

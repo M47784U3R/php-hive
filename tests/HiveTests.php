@@ -12,6 +12,6 @@ class HiveTests extends TestCase
     public function testInitHive() {
         $hive = new Hive(new Config(), new File());
         // var_dump($hive);
-        $this->assertTrue(true);
+        $this->assertInstanceOf(Hive::class, $hive);
     }
 }

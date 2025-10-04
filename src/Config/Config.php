@@ -6,12 +6,19 @@ use Composer\Downloader\FilesystemException;
 
 class Config
 {
+
+    private array $loggerSettings = [
+        'extension'      => 'log',
+        'dateFormat'     => 'Y-m-d H:i:s',
+    ];
+
     /**
      * @throws FilesystemException
      */
     public function __construct(
         private string $logPath = '',
-        private readonly bool $verbose = false
+        private readonly bool $verbose = false,
+        ?array $loggerSettings = []
     )
     {
         if ($this->logPath === '') {
@@ -26,6 +33,7 @@ class Config
                 throw new FilesystemException("Can't write to log directory {$this->logPath}");
             }
         }
+        $this->loggerSettings = array_merge($loggerSettings, $this->loggerSettings);
     }
 
     /**
@@ -42,5 +50,12 @@ class Config
     public function isVerbose(): bool
     {
         return $this->verbose;
+    }
+
+    /**
+     * @return array|string[]
+     */
+    public function getLoggerSettings(): array {
+        return $this->loggerSettings;
     }
 }
